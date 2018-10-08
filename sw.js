@@ -24,8 +24,17 @@ const filesToCache = [
 self.addEventListener('install', function (event) {
     console.log('Service worker installing...');
     event.waitUntil(
-        caches.open('cache1').then(cache => {
+        caches.open(cache1).then(function (cache) {
             return cache.addAll(filesToCache);
         })
+    );
+});
+
+self.addEventListener('fetch', function (event) {
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+                return response || fetch(event.request);
+            })
     );
 });
