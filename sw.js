@@ -21,10 +21,11 @@ const filesToCache = [
     '/js/restaurant_info.js'
 ];
 
-self.addEventListener('install', function(e) {
-    e.waitUntil(
-        caches.open(cache1).then(function(cache) {
-            return cache.addAll(cacheFiles);
+self.addEventListener('install', function (event) {
+    console.log('Service worker installing...');
+    event.waitUntil(
+        caches.open('cache1').then(cache => {
+            return cache.addAll(filesToCache);
         })
     );
 });
