@@ -6,10 +6,10 @@ I converted the original, static webpage to a mobile-ready web application. I al
 
 ## Table of Contents
 
-* [Installation]
-* [Leaflet.js and Mapbox]
-* [Note about ES6]
-* [Acknowledgments]
+* Installation
+* Leaflet.js and Mapbox
+* Note about ES6
+* Acknowledgments
 
 ## Installation
 
